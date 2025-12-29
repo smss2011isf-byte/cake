@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعلان كيك منزلي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fff0f5;
+            background-image: radial-gradient(#db2777 0.5px, transparent 0.5px), radial-gradient(#db2777 0.5px, #fff0f5 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .text-burgundy { color: #800020; }
+        .bg-burgundy { background-color: #800020; }
+        .btn-gradient {
+            background: linear-gradient(135deg, #800020 0%, #b91c1c 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 50px -12px rgba(128, 0, 32, 0.25);
+        }
+        
+        /* إخفاء شريط التمرير ولكن السماح بالتمرير */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* تأثير اللمعان للنص */
+        .shimmer-text {
+            background: linear-gradient(to right, #800020 20%, #ff4d4d 50%, #800020 80%);
+            background-size: 200% auto;
+            color: #800020;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        /* تأثير النبض للأسعار */
+        .price-badge {
+            animation: pulse-pink 2s infinite;
+        }
+        @keyframes pulse-pink {
+            0% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="max-w-md w-full glass-card rounded-3xl overflow-hidden border border-pink-100 relative shadow-2xl">
+        
+        <!-- الشريط العلوي (تم حذف الصورة الخلفية) -->
+        <div class="relative bg-burgundy text-white text-center py-10 px-4 overflow-hidden">
+            <!-- زخرفة خلفية بسيطة بدلاً من الصورة -->
+            <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+            
+            <div class="relative z-10">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-xs mb-3 border border-white/30 text-pink-50 shadow-sm">
+                    <i class="fas fa-crown text-yellow-400 mr-1"></i> جودة تنافس الجاهز
+                </div>
+                <h1 class="text-4xl font-extrabold mb-2 drop-shadow-lg tracking-wide text-white">أطيب كيك منزلي</h1>
+                <p class="text-pink-100 font-medium text-lg tracking-wide">لمناسباتكم السعيدة</p>
+            </div>
+        </div>
+
+        <!-- قسم السلايدر (معرض الصور المتحرك) -->
+        <div class="relative bg-white pb-2">
+            <!-- تم تعديل العرض ليكون grid لصورين فقط ليبدوا أجمل وأكبر -->
+            <div class="grid grid-cols-2 gap-2 p-3">
+                
+                <!-- الصورة 1 (يمين): التي اخترتها سابقاً -->
+                <div class="relative h-48 rounded-2xl overflow-hidden shadow-lg group border border-pink-100">
+                    <img src="https://i.pinimg.com/736x/25/6e/7c/256e7ce1eed4d3596773c5b04ac3ee8e.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" alt="كيك مناسبات فاخر">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/70 to-transparent p-2 text-white text-xs font-bold text-center">
+                        تصاميم مميزة للمناسبات
+                    </div>
+                </div>
+
+                <!-- الصورة 2 (يسار): الصورة الجديدة المطلوبة -->
+                <div class="relative h-48 rounded-2xl overflow-hidden shadow-lg group border border-pink-100">
+                    <img src="https://i.pinimg.com/736x/a0/8e/5c/a08e5c49e3a57111461524ffbbd45c84.jpg" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" alt="قطع كيك فاخر">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/70 to-transparent p-2 text-white text-xs font-bold text-center">
+                         قطع ضيافة مميزة
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- شريط الأسعار المعدل -->
+        <div class="mx-4 mt-2">
+            <div class="bg-gradient-to-r from-pink-50 to-pink-100 border border-pink-200 rounded-xl p-3 flex items-center justify-between price-badge relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 translate-x-full animate-[shine_2s_infinite]"></div>
+                <div class="flex items-center gap-2">
+                    <div class="bg-burgundy text-white rounded-full p-1.5 w-8 h-8 flex items-center justify-center shadow-md">
+                        <i class="fas fa-tags text-sm"></i>
+                    </div>
+                    <div>
+                        <p class="text-burgundy font-bold text-sm">أسعار مدروسة</p>
+                        <p class="text-gray-600 text-xs">تناسب الجميع وترضيكم</p>
+                    </div>
+                </div>
+                <!-- قلب أحمر نابض بدل النجوم -->
+                <i class="fas fa-heart text-red-500 text-2xl animate-pulse ml-1 drop-shadow-sm"></i>
+            </div>
+        </div>
+
+        <!-- المحتوى النصي -->
+        <div class="px-6 py-5 text-center space-y-4">
+            <p class="text-gray-700 leading-relaxed font-semibold">
+                هل تبحث عن التميز في ضيافتك؟ <br>
+                <span class="shimmer-text font-bold text-lg">نضمن لك الطعم والشكل والنظافة!</span>
+            </p>
+
+            <!-- معلومات الموقع -->
+            <div class="flex items-center justify-between bg-gray-50 p-3 rounded-xl border border-gray-200">
+                <div class="text-right">
+                    <p class="text-burgundy font-bold text-sm"><i class="fas fa-map-marker-alt ml-1"></i> دمشق - حي الورود</p>
+                    <p class="text-gray-500 text-xs mr-5">جانب صيدلية ندى</p>
+                </div>
+                <div class="bg-white px-3 py-1 rounded text-burgundy font-bold text-xs border border-gray-200">
+                    توصيل ضمن المنطقة
+                </div>
+            </div>
+
+            <!-- زر واتساب -->
+            <a href="https://wa.me/963935978822" target="_blank" class="block w-full btn-gradient text-white font-bold py-4 px-6 rounded-2xl shadow-xl transform hover:scale-[1.02] transition-all duration-300 relative overflow-hidden group no-underline">
+                <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                <div class="flex items-center justify-center gap-3 relative z-10">
+                    <i class="fab fa-whatsapp text-3xl"></i>
+                    <div class="text-right">
+                        <p class="text-xs text-red-100 font-normal">اضغط للحجز والاستفسار</p>
+                        <p class="text-xl leading-none font-bold">0935978822</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="text-center pb-4 text-[10px] text-gray-400">
+            صنع بكل حب <i class="fas fa-heart text-red-500 mx-1"></i> لإسعادكم
+        </div>
+    </div>
+
+    <!-- زر نسخ النص -->
+    <div class="fixed bottom-4 left-4 z-50">
+        <button onclick="copyAdText()" class="bg-gray-800 text-white px-5 py-3 rounded-full shadow-2xl text-xs font-bold hover:bg-black transition flex items-center gap-2 border border-gray-600">
+            <i class="fas fa-copy"></i> نسخ النص
+        </button>
+    </div>
+
+    <script>
+        function copyAdText() {
+            const text = `🍰 *كيك منزلي فاخر - حي الورود* 🍰
+
+تذوقوا أطيب أنواع الكيك المنزلي، شغل نظيف ومرتب ينافس الجاهز!
+نقدم لكم تشكيلة واسعة للمناسبات والضيافة.
+
+❤️ *أسعار مدروسة وتناسب الجميع* ❤️
+
+🎂 قوالب أعياد ميلاد
+🍰 قطع ضيافة فاخرة
+✨ نكهات مميزة ومكونات طازجة
+
+📍 *الموقع:* دمشق - حي الورود - جانب صيدلية ندى
+
+📱 *للحجز والطلب واتساب:*
+0935978822`;
+            
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            alert('تم نسخ الإعلان بنجاح!');
+        }
+    </script>
+</body>
+</html>
